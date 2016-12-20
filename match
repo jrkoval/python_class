@@ -1,0 +1,32 @@
+class Match:
+	def __init__(self):
+		self.males = {}
+		self.females = {}
+		fobj = open('system.txt', 'r')
+		for line in fobj:
+			fields = line.split()
+			name = fields[0]
+			gender = fields[1]
+			age = int(fields[2])
+			salary = int(fields[3])
+			if gender == 'm':
+				self.males[name] = {'age':age,'salary':salary}
+			else:
+				self.females[name] = {'age':age,'salary':salary}
+				
+		def show(self):
+			print("printing")
+			for male in self.males:
+				print(male, end=" ")
+				print(self.males[male]['age',end=" ")
+				print(self.males[male]['salary'], end=" "}
+				print()
+				for female in self.females:
+				print(female, end=" ")
+				print(self.females[male]['age',end=" ")
+				print(self.females[male]['salary'], end=" "}
+				print()
+				
+m = Match()
+m.show()
+			

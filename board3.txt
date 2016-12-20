@@ -1,0 +1,216 @@
+TODAY'S AGENDA
+-------------------------
+
+Network programming
+XML - Building and Parsing
+Threading
+
+Inheritence and Overloading
+Exceptions
+
+
+
+poem.py <----getLines-----------server<--------'land'------->client
+
+When you build a server and a client using sockets,
+it can exchange only bytes/strings
+
+		['land',(4,'This is my own land')]
+
+
+Server and Client should exchange the data in a programming language independent format
+
+	1. json
+	2. xml ----->
+
+
+-------------------------------------coffee break -- 15 mins -------------
+
+1. Inheritence in python
+2. How to manage the attributes by using 'pesudo attribute concepts'
+3. How to use decorators/properties to implement attribute management
+4. overloading the functions
+
+	Have more than one functions with the same name while they differ in 
+	either the number of arguments/type of arguments and the compiler decides 
+	which function to be called
+
+
+
+
+
+
+5. overloading the operators
+
+	
+
+
+
+
+
+
+
+
+
+1. client send the word -- land -- to the server
+2. server will use the poem module (getLines) and gets all the lines in the form of a list
+3. server will convert the list into xml representation and sends to the client
+4. client should extract the information from the xml and display
+
+
+-----------------------------------------------------------------
+poem -- case study
+
+	1. Regular Expressions
+	2. enumerate function
+	3. map and filter 
+	4. lambda expressions
+	5. List comprehensions
+	6. Server and Client using sockets
+	7. Generate xml -- xml.minidom module
+	8. parse the xml -- xml.sax
+
+
+--------------------------------------------
+
+
+
+import xml.sax
+xml.sax.parseString -- takes two arguments
+	1. xml string
+	2. The object of ContentHandler class
+
+xml.sax.parseString("<city>london</city>",Handler())
+
+
+
+<city>
+london
+</city>
+------------------------------------------------------------------------
+
+1. open two command line terminals
+2. Run the modified server as usual
+3. run the client in the first terminal
+	It will ask you to input your name
+	DO NOT INPUT ANYTHING
+4. run the client ( 2nd client ) in the second terminal
+	It will ask you to input your name
+	Enter your name
+
+5. The server do not seem to respond
+
+6. Go back to terminal 1 and enter the name
+
+7. server responds in both the terminals
+----------------------------------------------------------------------------
+
+
+while True:
+    #first client connects here
+    client,addr = server_socket.accept()
+
+    #server will ask the first client to enter some data
+    #server waits here indefinitely for the client input
+    data = client.recv(100)
+    
+    data = data.decode('utf-8')
+    
+    data = "Hello "+data
+    
+    client.send(bytes(data,'utf-8'))
+
+
+while True:
+	#gets the client connection
+	client,addr = server_socket.accept()
+
+	#createa a thread and hands over the client to the thread
+	t1 = Mythread(client)
+
+	#put the thread in the ready state
+	t1.start()
+
+------------------------------------------------------------------
+
+			----lunch break one hour ----- 
+-------------------------------------------------------------------
+
+
+
+
+
+class Handler(xml.sax.ContentHandler):
+	pass
+
+
+class Mythread(threading.Thread):
+	def __init__(self,client):
+		threading.Thread.__init__(self)
+		....
+		...
+---------------------------------------------------
+
+
+Employee is also a person/human being??
+
+	CPU ------- Ready Queue (   t2,  ....)
+		    Running state ( t1,)
+		    wait state 
+
+
+
+
+Agenda
+------
+
+Operator Overloading
+Command line parsing 
+piping 
+os module
+GUI 
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

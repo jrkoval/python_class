@@ -1,0 +1,11 @@
+import xml.dom.minidom
+doc = xml.dom.minidom.Document()
+lines = doc.createElement('lines')
+lines.setAttribute("total","1")
+lines.setAttribute("words","land")
+line = doc.createElement('line')
+text = doc.createTextNode('This is my land')
+line.appendChild(text)
+lines.appendChild(line)
+doc.appendChild(lines)
+print(doc.toprettyxml())

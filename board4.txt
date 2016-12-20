@@ -1,0 +1,215 @@
+Agenda
+------
+
+1. Overloading Operators
+2. Command line arguments
+3. piping commands
+4. os module
+5. GUI Development part 1
+
+-----------------------------
+Agenda - Tomorrow
+
+GUI Development part 2
+Develop a Recommendation System
+Project Discussion --- Data Science
+	Tutorial plus Code
+
+debug in python
+What next?
+
+Conclusion
+
+
+
+
+
+
+import sys
+
+args = sys.argv[1:]
+
+p = int(args[0])
+r = int(args[1])
+t = int(args[2])
+
+print(p * r *  t/100)
+
+
+Limitations of sys.argv methods of accessing command lines args
+
+1. Every argument is passed in the form of strings, need to manually convert to integers
+2. There is no way to pass default values, you need to pass all the values
+3. The arguments need to passed in the same order
+4. There is no way to get the help
+
+-----------------------------------------------------------------------------------
+
+cut -d " " -f 1,2 records.txt
+
+1. If the filename is not specified (cut -d " " -f 1,2), our code should start 
+	reading from the stdin device
+
+2. The -f 1,2 should be validated
+
+	-f ,,,,1,2 ( Invalid becasue the expr starts with non-digit)
+	
+	-f 1,,,2 (Invalid as there are more than one saperator )
+
+	-f 1,2,,, ( Invalid cuz the expressions does not end with a digit)
+
+
+3. 
+
+	name gender age salary ( -f 0,1,2)
+	name gender ( -f 0,1,2)
+	name gender age ( -f 0,1,2)
+	name ( -f 0,1,2)
+
+
+3. piping commands
+
+	ls -l | cut -d " " -f 1,2,3 | sort | grep 
+	 
+
+4. os module
+
+	import os
+
+	os.mkdir("dirname")
+	os.chdir("dirname")
+	os.getcwd()
+	os.listdir()
+
+	g = os.walk(os.getcwd())
+
+	next(g)
+		returns a tuple -- 3 elements
+			string -- dirname
+			list ---- directories under this directory
+			list ---- files under this directory
+
+
+	for dirname,dirlist,filelist in g:
+		#find all the empty directories
+		#fild all the python files(.py)
+		#find all the files that are in particular direc
+		.....
+		....
+		....
+
+-------------------------------------------------------------------------------------------
+
+5. GUI Development part 1
+
+	pygtk ---- open source
+	pyQt ----- Nokia
+	tkinter --- open source/Free
+
+	1. Simpler compared to other GUI frameworks
+	2. It comes built-in with python
+
+
+
+Simple Interest Calculator
+
+Widgets
+
+1. Container Widgets
+		Making the layouts, contain mostly the visible widgets
+
+2. Visible Widgets
+		labels, menus, Entries, buttons 
+
+
+
+	Root Window
+
+		Frame1 
+			'Principal' 		Entry1
+
+		Frame2
+			'rate'			Entry2
+
+		Frame3
+			'time'			Entry3
+
+		Frame4
+			Result here
+
+		Frame5
+			Compute			Clear
+
+
+
+
+
+		"Coffee break 15 mins "
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

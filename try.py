@@ -1,0 +1,10 @@
+import xml.dom.minidom
+doc = xml.dom.minidom.Document()
+cities = doc.createElement('cities')
+cities.setAttribute("total","1")
+city = doc.createElement('city')
+text = doc.createTextNode('London')
+city.appendChild(text)
+cities.appendChild(city)
+doc.appendChild(cities)
+print(doc.toprettyxml())
